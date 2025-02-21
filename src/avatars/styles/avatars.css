@@ -34,12 +34,12 @@ body {
   width: 64px;
   height: 64px;
   position: relative;
+}
 
-  img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-  }
+.avatar img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
 }
 
 .activate-button {
@@ -51,8 +51,8 @@ body {
   background-color: #808080;
   border: 1px solid #ffffff;
   border-radius: 50%;
+}
 
-  &:hover {
-    background-color: #00ff00;
-  }
+.activate-button:hover {
+  background-color: #00ff00;
 }
