@@ -10,13 +10,22 @@ body {
 .box {
   padding: 100px;
   background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
   position: relative;
 }
+
 .avatar-button {
   position: absolute;
-  top: -30px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 0.5px solid #dbdbdb;
+  font-size: 11px;
+  padding: 8px;
+  top: -35px;
   left: 0px;
 }
+
 .avatar-container {
   display: flex;
   width: 350px;
