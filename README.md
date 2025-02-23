@@ -10,4 +10,4 @@
 ## Avatars
 
 - [Avatars](./src/avatars/avatars.html)
-- [회고](./src/md/retrospect.md)
+- [회고](./src/avatars/avatars.md)
