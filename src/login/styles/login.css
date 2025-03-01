@@ -1,1 +1,184 @@
-/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+@import "../common/a11y.css";
+:root {
+  --font-size16: 1rem; /* 16px */
+  --font-color: #121212;
+  --focus-color: #24388d;
+}
+
+body {
+  font-size: var(--font-size16);
+  color: var(--font-color);
+  font-family: "SUIT", sans-serif;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: 48rem) {
+    /* 768px */
+    .a-ip {
+      display: none;
+    }
+    .login-form {
+      width: 100%;
+      fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+    }
+
+    .button-remember {
+      justify-content: flex-end; /* 로그인 유지 버튼을 오른쪽으로 배치 */
+      margin-left: auto; /* 오른쪽 정렬을 위해 자동 마진 추가 */
+    }
+  }
+
+  @media (min-width: 48.0625rem) {
+    /* 769px */
+    .login-form {
+      width: 31.25rem; /* 500px */
+      fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+    }
+    .a-ip {
+      display: flex;
+      flex-flow: row nowrap;
+      text-decoration: none;
+      justify-content: flex-end;
+      color: #121212;
+      margin-top: 0.625rem; /* 10px */
+      &::after {
+        content: "OFF";
+        color: #57575788;
+        font-weight: bold;
+        margin-left: 0.3125rem; /* 5px */
+      }
+    }
+    .button-remember {
+      margin-right: auto; /* 로그인 유지 버튼을 왼쪽으로 배치 */
+    }
+  }
+
+  .login-container {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 4.375rem 1.25rem 6.9375rem 1.25rem; /* 70px 20px 111px 20px */
+    align-items: center;
+    gap: 2.8125rem; /* 45px */
+
+    .naver {
+      .naver__logo {
+        display: block;
+
+        img {
+          width: 14.375rem; /* 230px */
+        }
+      }
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button-login {
+      width: 100%;
+      font-size: 1rem; /* 16px */
+      height: 2.8125rem; /* 45px */
+      color: #fff;
+      background-color: #03cf5d;
+      margin-top: 1.25rem; /* 20px */
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #02b84d; /* 호버 시 배경색 변화 */
+      }
+    }
+
+    .button-remember {
+      display: flex;
+      flex-flow: row nowrap;
+      margin-top: 0.625rem; /* 10px */
+      label {
+        width: 1.5rem; /* 24px */
+        height: 1.5rem; /* 24px */
+      }
+
+      &::after {
+        content: "로그인 상태 유지";
+        margin-left: 0.3125rem; /* 5px */
+      }
+    }
+    .email-form,
+    .password-form {
+      width: 100%;
+      margin-bottom: 0.625rem; /* 10px */
+
+      .error-message {
+        color: red;
+        display: none; /* 기본적으로 숨김 */
+      }
+
+      input {
+        flex: 1 0 0;
+        font-size: 0.875rem; /* 14px */
+        height: 2.8125rem; /* 45px */
+        border: 0.0625rem solid #dadada; /* 1px */
+        background-color: #fff;
+        padding-left: 1rem; /* 16px */
+        box-sizing: border-box;
+
+        &:focus {
+          border-color: #03cf5d;
+          background-color: #e9f0fd;
+          outline: none;
+        }
+      }
+      .error-message {
+        color: red;
+        display: none;
+      }
+
+      input:invalid:focus + .error-message {
+        display: block;
+      }
+
+      input:valid:focus + .error-message {
+        display: none;
+      }
+
+      input {
+        width: inherit;
+        font-size: 0.875rem; /* 14px */
+        height: 2.8125rem; /* 45px */
+        border: 0.0625rem solid #dadada; /* 1px */
+        background-color: #fff;
+        padding: 1rem; /* 16px */
+
+        &:focus {
+          border-color: #03cf5d;
+          background-color: #e9f0fd;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+#loginRemember {
+  display: none;
+
+  + label {
+    background-repeat: no-repeat;
+    background-image: url("../images/unchecked.svg");
+  }
+
+  &:checked + label {
+    background-repeat: no-repeat;
+    background-image: url("../images/checked.svg");
+  }
+}
